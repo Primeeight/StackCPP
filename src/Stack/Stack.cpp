@@ -22,6 +22,15 @@ que2.clear();
 
 template<class T>
 void Stack<T>::transferFrom(Stack<T> &source) {
+    que1.clear();
+    T temp;
+for (int i; i< source.length(); i++){
+   source.dequeue(temp);
+    if (temp != std::nullopt){
+        que1.push(temp);
+    }
+    source.clear();
+}
 
 }
 
