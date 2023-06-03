@@ -25,5 +25,18 @@ namespace {
         //Test
         EXPECT_EQ("purple", stack->top());
     }
+    TEST(Stack_Push, Test1_Double) {
+        //Setup
+        auto stack = new Stack<double>();
+        double value = 1.618;
+        //Process
+        stack->push(value);
+        value = 033;
+        stack->push(value);
+        value = 988;
+        stack->push(value);
+        //Test
+        EXPECT_EQ(988, stack->top());
+    }
 
 }

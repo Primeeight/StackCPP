@@ -32,5 +32,16 @@ namespace {
         EXPECT_EQ(4, stack->length());
 
     }
+    TEST(Stack_Length, Test1_Double) {
+        //Setup
+        auto stack = new Stack<double>();
+        double value = 1.618;
+        //Process
+        stack->push(value);
+        value = 033;
+        stack->push(value);
+        //Test
+        EXPECT_EQ(2, stack->length());
+    }
 
 }

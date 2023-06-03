@@ -22,12 +22,12 @@ que2.clear();
 
 template<class T>
 void Stack<T>::transferFrom(Stack<T> &source) {
-    que1.clear();
-    T temp;
+    clear();
+    std::optional<T> temp;
 for (int i; i< source.length(); i++){
-   source.dequeue(temp);
+   source.pop(temp);
     if (temp != std::nullopt){
-        que1.push(temp);
+        push(temp);
     }
     source.clear();
 }
@@ -96,14 +96,18 @@ int Stack<T>::length() {
 template<class T>
 std::string Stack<T>::outputStack() {
     std::stringstream ss;
+    T temp;
     if (que1.length() == 0) {
         ss << "";
     } else {
         std::stringstream ss;
 
-        for (int i = 0; i < que1.length(); ++i) {
-            ss << que1.pop;
+        for (int i = 0; i < que1.length()-1; ++i) {
+            pop(temp);
+            ss << temp + ", ";
         }
+        pop(temp);
+        ss << temp;
     }
     return ss.str();
 }

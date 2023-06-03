@@ -5,7 +5,7 @@ namespace {
 
     TEST(Stack_Clear, Test1_Int) {
         //Setup
-        auto* stack = new Stack<int>();
+        auto *stack = new Stack<int>();
         int value = 10;
         //Process
         stack->push(value);
@@ -34,6 +34,15 @@ namespace {
     /**
      * Create additional tests
      */
-
+    TEST(Stack_Clear, Test1_Double) {
+        //Setup
+        auto *stack = new Stack<double>();
+        double value = 1.618;
+        //Process
+        stack->push(value);
+        stack->clear();
+        //Test
+        EXPECT_EQ(0, stack->length());
+    }
 }
 

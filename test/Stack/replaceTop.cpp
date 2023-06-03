@@ -32,6 +32,17 @@ namespace {
     /**
      * Create additional tests
      */
-
+    TEST(Stack_ReplaceTop, Test1_Double) {
+        auto stack = new Stack<double>();
+        double value = 55;
+        double value2 = 45;
+        double value3 = 28;
+        //Process
+        stack->push(value);
+        stack->push(value2);
+        stack->replaceTop(value3);
+        //Test
+        EXPECT_EQ(28, stack->top());
+    }
 
 }

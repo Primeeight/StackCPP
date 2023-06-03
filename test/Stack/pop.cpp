@@ -32,4 +32,14 @@ namespace {
      * Create additional tests
      */
 
+    TEST(Stack_Pop, Test3_Double) {
+        //Setup
+        auto stack = new Stack<double>();
+        double value = 3.14;
+        //Process
+        stack->push(value);
+        stack->pop(value);
+        //Test
+        EXPECT_EQ(std::nullopt, stack->top());
+    }
 }
