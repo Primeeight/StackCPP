@@ -25,9 +25,9 @@ void Stack<T>::transferFrom(Stack<T> &source) {
     clear();
     std::optional<T> temp;
 for (int i; i< source.length(); i++){
-   source.pop(temp);
+   source.pop(temp.value());
     if (temp != std::nullopt){
-        push(temp);
+        push(temp.value());
     }
     source.clear();
 }

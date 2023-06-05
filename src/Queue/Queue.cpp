@@ -28,10 +28,12 @@ Queue<T> & Queue<T>::operator=(Queue<T> const& rhs) = default;
 
 template<class T>
 void Queue<T>::enqueue(T &x) {
+_seq.add(x, 0);
 }
 
 template<class T>
 void Queue<T>::dequeue(T &x) {
+_seq.remove(x, _seq.length());
 
 }
 
